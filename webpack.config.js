@@ -25,13 +25,15 @@ module.exports = (env, argv) => {
         output: {
             path: path.resolve(__dirname, 'dist'),
             filename: filename('js'),
-            clean: true
+            clean: true,
+            assetModuleFilename: 'assets/images/[name][ext]'
         },
         resolve: {
             extensions: ['.js'],
             alias: {
-                '@': path.resolve(__dirname, 'src')
-            }
+                '@': path.resolve(__dirname, 'src'),
+                images: path.resolve(__dirname, 'src/assets/img/'),
+            },
         },
         devServer: {
             port: '3000',
@@ -62,6 +64,14 @@ module.exports = (env, argv) => {
                             presets: ['@babel/preset-env']
                         }
                     }
+                },
+                {
+                    test: /\.html$/,
+                    use: 'html-loader'
+                },
+                {
+                    test: /\.(jpg|png|svg|jpeg|gif)$/,
+                    type: 'asset/resource'
                 }
             ],
         }
