@@ -1,15 +1,97 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Context Menu</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>surepmenu</title>
+  <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
+  <header class="header"></header>
 
-<ul class="menu" id="menu"></ul>
+  <main>
+    <section class="screen greeting">
+      <div class="container">
+        <div class="warning-message">
+          <span class="warning-message__text">the site contains musical sounds</span>
+        </div>
+        <button class="go-next-screen">
+					<div class="btn-image rotate"></div>
+					<div class="btn-image rotate-reverse"></div>
+					<div class="btn-image rotate"></div>
+					<div class="btn-image rotate-reverse"></div>
 
+          <span class="go-next-screen__text">press me</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="screen right faq">
+      <div class="container">
+        <h2 class="faq__headline">FAQ</h2>
+        <div class="faq__combo-inner">
+          <div class="faq__wrapper">
+            <h3 class="faq__headline">right click</h3>
+            <span class="faq__text">when you right-click inside the screen, 
+              a context menu appears with commands in the place where you clicked
+            </span>
+          </div>
+          <div class="faq__wrapper">
+            <h3 class="faq__headline">left click</h3>
+            <p class="faq__title">team selection:</p>
+            <ol class="faq__list">
+              <li class="faq__item"><span>Click Analytics</span></li>
+              <li class="faq__item"><span>Random figure</span></li>
+              <li class="faq__item"><span>Countdown timer</span></li>
+              <li class="faq__item"><span>Random sound</span></li>
+              <li class="faq__item"><span>Random background</span></li>
+              <li class="faq__item"><span>Custom message and more...</span></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen right polygon">
+      <div class="container"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__wrapper">
+        <div class="footer__logo-ang-headline">
+          <a href="" class="footer__logotype">
+						<div class="footer__logo"></div>
+          </a>
+          <h1 class="footer__headline">supermenu</h1>
+        </div>
+
+        <span class="footer__text">The context menu can become an application. 
+          Don't believe? Click the button and see for yourself. 
+          Ready to dive into the world of wonder? So what are you waiting for.
+        </span>
+
+        <button class="button button--primary button--hidden start-using hidden"><span>start using</span></button>
+        <a href="https://github.com/den-mesh/supermenu" class="button button--primary button--icon button--hidden see-code hidden"><span>see code</span></a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="supermenu hidden" id="supermenu">
+    <ul class="supermenu__list">
+      <li class="supermenu__item"><button class="supermenu__btn supermenu__btn--background" id="background">Random backround</button></li>
+      <li class="supermenu__item"><button class="supermenu__btn supermenu__btn--sound" id="sound">Random sound</button></li>
+      <li class="supermenu__item"><button class="supermenu__btn supermenu__btn--clicks" id="clicks">Click Analytics</button></li>
+      <li class="supermenu__item"><button class="supermenu__btn supermenu__btn--figure" id="figure">Random figure</button></li>
+      <li class="supermenu__item"><button class="supermenu__btn supermenu__btn--timer" id="timer">Countdown timer</button></li>
+      <li class="supermenu__item"><button class="supermenu__btn supermenu__btn--message" id="message">Custom message and more...</button></li>
+    </ul>
+  </div>
+
+  <div class="timer" id="timer">
+    <span class="timer__text"></span>
+  </div>
 </body>
 </html>
