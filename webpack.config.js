@@ -25,15 +25,13 @@ module.exports = (env, argv) => {
         output: {
             path: path.resolve(__dirname, 'dist'),
             filename: filename('js'),
-            clean: true,
-            assetModuleFilename: 'assets/images/[name][ext]'
+            clean: true
         },
         resolve: {
             extensions: ['.js'],
             alias: {
-                '@': path.resolve(__dirname, 'src'),
-                images: path.resolve(__dirname, 'src/assets/img/'),
-            },
+                '@': path.resolve(__dirname, 'src')
+            }
         },
         devServer: {
             port: '3000',
@@ -50,8 +48,7 @@ module.exports = (env, argv) => {
             }),
         ],
         module: {
-            rules: [
-                {
+            rules: [{
                     test: /\.css$/i,
                     use: [MiniCssExtractPlugin.loader, "css-loader"],
                 },
@@ -66,13 +63,14 @@ module.exports = (env, argv) => {
                     }
                 },
                 {
-                    test: /\.html$/,
-                    use: 'html-loader'
+                    test: /\.(?:|gif|png|jpg|jpeg|svg)$/,
+                    use: [{
+                        loader: 'file-loader',
+                        options: {
+                            name: `./img/${filename('[ext]')}`
+                        }
+                    }],
                 },
-                {
-                    test: /\.(jpg|png|svg|jpeg|gif)$/,
-                    type: 'asset/resource'
-                }
             ],
         }
     }
