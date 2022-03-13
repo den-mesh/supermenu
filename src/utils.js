@@ -72,3 +72,8 @@ export function changeGradient () {
   let colorTwo = getRandomColor()
   return getRandomLinearGradient(colorOne, colorTwo)
 }
+
+export function RandomArray(min, max) {
+  let randomNumber = min + Math.random() * (max + 1 - min)
+  return Math.floor(randomNumber)
+}

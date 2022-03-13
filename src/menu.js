@@ -1,5 +1,6 @@
-import { Menu } from './core/menu'
+import { Menu } from './core/menu';
 import { ClicksModule } from './modules/clicks.module';
+import { RandomMessages } from './modules/randomMessage';
 import { animateVisibleEl, animateDownHideEl, animateOpacityHideEl, changeGradient } from './utils';
 
 export class ContextMenu extends Menu {
@@ -84,5 +85,14 @@ export class ContextMenu extends Menu {
       }
     })
     // clicksModule
+
+    // Random message
+    const randomMessage = new RandomMessages('message', 'Random message')
+    this.el.querySelector('.supermenu__list').insertAdjacentHTML('afterbegin', randomMessage.toHTML())
+    const message = document?.querySelector(`[data-type="message"]`);
+    message.addEventListener('click', () => {
+      randomMessage.showMessage();
+    })
+    // Random message
   }
 }
