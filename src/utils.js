@@ -1,9 +1,5 @@
 const stylesDirection = ['to right', 'to bottom right', '-90deg']
 
-export function random(min, max) {
-  return Math.round(min - 0.5 + Math.random() * (max - min + 1))
-}
-
 export const generateCounterClickhtml = (time, click, dblClick) => {
   return `
     <div class="timer__counter">
@@ -73,9 +69,9 @@ export function changeGradient () {
   return getRandomLinearGradient(colorOne, colorTwo)
 }
 
-export function RandomArray(min, max) {
-  let randomNumber = min + Math.random() * (max + 1 - min)
-  return Math.floor(randomNumber)
+export const randomPath = (arr) => {
+  let index = Math.round(Math.random() * arr.length);
+  return arr[index];
 }
 
 
@@ -104,7 +100,16 @@ export const randomMessage = (domEl, module) => {
   domEl.querySelector('.supermenu__list').insertAdjacentHTML('afterbegin', randomMessage.toHTML())
   const message = document?.querySelector(`[data-type="message"]`);
   message.addEventListener('click', () => {
-  randomMessage.showMessage();
+    randomMessage.showMessage();
+  })
+}
+
+export const shapeRender = (domEl, module) => {
+  const randomShape = new module('shapes', 'Random shape')
+  domEl.querySelector('.supermenu__list').insertAdjacentHTML('afterbegin', randomShape.toHTML())
+  const shape = document?.querySelector(`[data-type="shapes"]`);
+  shape.addEventListener('click', () => {
+    randomShape.trigger();
   })
 }
 

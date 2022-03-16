@@ -1,8 +1,9 @@
 import { Menu } from './core/menu';
 import { ClicksModule } from './modules/clicks.module';
 import { RandomMessages } from './modules/randomMessage';
+import { ShapeModule } from './modules/shape.module';
 import { animateVisibleEl, animateDownHideEl, animateOpacityHideEl, changeGradient} from './utils';
-import { clicksAnalitycs, timer, randomMessage } from './utils';
+import { clicksAnalitycs, timer, randomMessage, shapeRender} from './utils';
 import {Timer} from './modules/timer'
 
 const screens = document.querySelectorAll('.screen')
@@ -37,10 +38,6 @@ export class ContextMenu extends Menu {
             animateVisibleEl(btnSeeCode)
         })
 
-        this.el.addEventListener('mouseleave', () => {
-            this.close();
-        })
-
         btnRandomBg.addEventListener('click', () => {
             document.body.style.background = changeGradient()
         })
@@ -63,6 +60,10 @@ export class ContextMenu extends Menu {
             this.el.style.top = `${layerY - 20}px`
             this.el.style.left = `${layerX - 20}px`
         })
+
+        this.el.addEventListener('mouseleave', () => {
+            this.close();
+        })
     }
 
     close() {
@@ -79,5 +80,6 @@ export class ContextMenu extends Menu {
         clicksAnalitycs(this.el, ClicksModule);
         timer(this.el, Timer);
         randomMessage(this.el, RandomMessages);
+        shapeRender(this.el, ShapeModule);
     }
 }

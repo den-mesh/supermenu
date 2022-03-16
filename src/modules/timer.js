@@ -15,23 +15,26 @@ export class Timer extends Module {
         timerHTML.classList.add("user-timer");
         document.body.append(timerHTML);
 
-        setInterval(() => {
-            userTime -= 1;
-            let time = 2;
-            timeCounter.textContent = userTime;
-
-            if (userTime === 0) {
-                timeCounter.remove();
-                timerHTML.style.background = "orange";
-                timerHTML.textContent = "Finished timer";
-                setInterval(() => {
-                    time -= 1;
-                    if (time === 0) {
-                        timerHTML.remove();
-                    }
-                }, 2000);
-            }
-
-        }, 1000)
+        if(userTime === null){
+            return
+        }else {
+            setInterval(() => {
+                timeCounter.textContent = userTime;
+                let time = 2;
+                userTime -= 1;
+                if (userTime < 0) {
+                    timeCounter.remove();
+                    timerHTML.style.background = "orange";
+                    timerHTML.textContent = "Finished timer";
+                    setInterval(() => {
+                        time -= 1;
+                        if (time === 0) {
+                            timerHTML.remove();
+                        }
+                    }, 2000);
+                }
+    
+            }, 1000)
+        }
     }
 }
