@@ -16,8 +16,8 @@ export class Module {
 
     toHTML() {
         return `
-        <li class="supermenu__item" data-type="${this.type}">
-            <button class="supermenu__btn" id="clicks">${this.text}</button>
+        <li class="supermenu__item">
+            <button class="supermenu__btn" data-type="${this.type}">${this.text}</button>
         </li>
         `;
     }

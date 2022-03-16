@@ -20,7 +20,7 @@ export const generateCounterClickhtml = (time, click, dblClick) => {
         <span class="dblclick__number">${dblClick}</span>
       </div>
     </div>
-    <div class="target__click">
+    <div class="target__click" style="color: #ccc;">
       <p class="target__click--title">Click here</p>
     </div>
   `;
@@ -77,3 +77,35 @@ export function RandomArray(min, max) {
   let randomNumber = min + Math.random() * (max + 1 - min)
   return Math.floor(randomNumber)
 }
+
+
+// modules ---------------------------------------------------------------------------------
+
+export const clicksAnalitycs = (domEl, module) => {
+  const clicksModule = new module('clicksModule', 'Click Analytics')
+  domEl.querySelector('.supermenu__list').insertAdjacentHTML('afterbegin', clicksModule.toHTML())
+  const counterClick = document?.querySelector(`[data-type="clicksModule"]`);
+  counterClick.addEventListener('click', () => {
+    clicksModule.trigger();
+  })
+}
+
+export const timer = (domEl, module) => {
+  const timer = new module('user-timer', 'Countdown timer')
+  domEl.querySelector('.supermenu__list').insertAdjacentHTML('afterbegin', timer.toHTML())
+  const timerClick = document?.querySelector(`[data-type="user-timer"]`);
+  timerClick.addEventListener('click', () => {
+      timer.timer();
+  })
+}
+
+export const randomMessage = (domEl, module) => {
+  const randomMessage = new module('message', 'Random message')
+  domEl.querySelector('.supermenu__list').insertAdjacentHTML('afterbegin', randomMessage.toHTML())
+  const message = document?.querySelector(`[data-type="message"]`);
+  message.addEventListener('click', () => {
+  randomMessage.showMessage();
+  })
+}
+
+// modules ---------------------------------------------------------------------------------

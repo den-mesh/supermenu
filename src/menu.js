@@ -1,8 +1,17 @@
 import { Menu } from './core/menu';
 import { ClicksModule } from './modules/clicks.module';
 import { RandomMessages } from './modules/randomMessage';
-import {animateVisibleEl, animateDownHideEl, animateOpacityHideEl, changeGradient} from './utils';
+import { animateVisibleEl, animateDownHideEl, animateOpacityHideEl, changeGradient} from './utils';
+import { clicksAnalitycs, timer, randomMessage } from './utils';
 import {Timer} from './modules/timer'
+
+const screens = document.querySelectorAll('.screen')
+const goToNextScreen = document.querySelector('.go-next-screen')
+const footerText = document.querySelector('.footer__text')
+const btnStartUsing = document.querySelector('.start-using')
+const btnSeeCode = document.querySelector('.see-code')
+const warningMessage = document.querySelector('.warning-message')
+const btnRandomBg = document.querySelector('#background')
 
 export class ContextMenu extends Menu {
     constructor(selector) {
@@ -10,14 +19,6 @@ export class ContextMenu extends Menu {
     }
 
     open() {
-        const screens = document.querySelectorAll('.screen')
-        const goToNextScreen = document.querySelector('.go-next-screen')
-        const footerText = document.querySelector('.footer__text')
-        const btnStartUsing = document.querySelector('.start-using')
-        const btnSeeCode = document.querySelector('.see-code')
-        const warningMessage = document.querySelector('.warning-message')
-        const btnRandomBg = document.querySelector('#background')
-
         goToNextScreen.addEventListener('click', () => {
             screens[0].classList.add('up')
             screens[1].classList.remove('right')
@@ -75,32 +76,8 @@ export class ContextMenu extends Menu {
     }
 
     add() {
-        // clicksModule
-        const clicksModule = new ClicksModule('clicksModule', 'Click Analytics')
-        this.el.querySelector('.supermenu__list').insertAdjacentHTML('afterbegin', clicksModule.toHTML())
-        const counterClick = document?.querySelector(`[data-type="clicksModule"]`);
-        counterClick.addEventListener('click', () => {
-            const timerWrapper = document.querySelector('.timer__wrapper');
-            if (timerWrapper.innerHTML === '') {
-                clicksModule.trigger();
-            }
-        })
-
-        // tomerModule
-        const timer = new Timer('user-timer', 'Countdown timer')
-        this.el.querySelector('.supermenu__list').insertAdjacentHTML('afterbegin', timer.toHTML())
-        const timerClick = document?.querySelector(`[data-type="user-timer"]`);
-        timerClick.addEventListener('click', () => {
-            timer.timer();
-        })
-
-        // Random message
-        const randomMessage = new RandomMessages('message', 'Random message')
-        this.el.querySelector('.supermenu__list').insertAdjacentHTML('afterbegin', randomMessage.toHTML())
-        const message = document?.querySelector(`[data-type="message"]`);
-        message.addEventListener('click', () => {
-        randomMessage.showMessage();
-        })
-        // Random message
+        clicksAnalitycs(this.el, ClicksModule);
+        timer(this.el, Timer);
+        randomMessage(this.el, RandomMessages);
     }
 }
