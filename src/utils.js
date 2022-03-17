@@ -70,7 +70,7 @@ export function changeGradient () {
 }
 
 export const randomPath = (arr) => {
-  let index = Math.round(Math.random() * arr.length);
+  let index = Math.round(Math.random() * arr.length - 1);
   return arr[index];
 }
 
@@ -110,6 +110,24 @@ export const shapeRender = (domEl, module) => {
   const shape = document?.querySelector(`[data-type="shapes"]`);
   shape.addEventListener('click', () => {
     randomShape.trigger();
+  })
+}
+
+export const randomSaund = (domEl, module) => {
+  const saund = new module('random-saund', 'Random saund')
+  domEl.querySelector('.supermenu__list').insertAdjacentHTML('afterbegin', saund.toHTML())
+  const playSound = document?.querySelector(`[data-type="random-saund"]`);
+  playSound.addEventListener('click', () => {
+    saund.sound();
+  })
+}
+
+export const randomBackground = (domEl, module) => {
+  const randomBackground = new module('random-background', 'Random backround')
+  domEl.querySelector('.supermenu__list').insertAdjacentHTML('afterbegin', randomBackground.toHTML())
+  const random = document?.querySelector(`[data-type="random-background"]`);
+  random.addEventListener('click', () => {
+    randomBackground.chengeBackground();
   })
 }
 

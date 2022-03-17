@@ -1,18 +1,19 @@
 import { Menu } from './core/menu';
 import { ClicksModule } from './modules/clicks.module';
 import { RandomMessages } from './modules/randomMessage';
+import { Timer } from './modules/timer';
 import { ShapeModule } from './modules/shape.module';
-import { animateVisibleEl, animateDownHideEl, animateOpacityHideEl, changeGradient} from './utils';
-import { clicksAnalitycs, timer, randomMessage, shapeRender} from './utils';
-import {Timer} from './modules/timer'
+import { BackgroundModule } from './modules/background.module';
+import { SoundModule } from './modules/sound.module';
+import { animateVisibleEl, animateDownHideEl, animateOpacityHideEl} from './utils';
+import { clicksAnalitycs, timer, randomMessage, shapeRender, randomBackground, randomSaund } from './utils';
 
-const screens = document.querySelectorAll('.screen')
-const goToNextScreen = document.querySelector('.go-next-screen')
-const footerText = document.querySelector('.footer__text')
-const btnStartUsing = document.querySelector('.start-using')
-const btnSeeCode = document.querySelector('.see-code')
-const warningMessage = document.querySelector('.warning-message')
-const btnRandomBg = document.querySelector('#background')
+const screens = document.querySelectorAll('.screen');
+const goToNextScreen = document.querySelector('.go-next-screen');
+const footerText = document.querySelector('.footer__text');
+const btnStartUsing = document.querySelector('.start-using');
+const btnSeeCode = document.querySelector('.see-code');
+const warningMessage = document.querySelector('.warning-message');
 
 export class ContextMenu extends Menu {
     constructor(selector) {
@@ -36,10 +37,6 @@ export class ContextMenu extends Menu {
             animateDownHideEl(this)
             animateDownHideEl(btnStartUsing)
             animateVisibleEl(btnSeeCode)
-        })
-
-        btnRandomBg.addEventListener('click', () => {
-            document.body.style.background = changeGradient()
         })
 
         document.addEventListener('contextmenu', (event) => {
@@ -81,5 +78,7 @@ export class ContextMenu extends Menu {
         timer(this.el, Timer);
         randomMessage(this.el, RandomMessages);
         shapeRender(this.el, ShapeModule);
+        randomBackground(this.el, BackgroundModule);
+        randomSaund(this.el, SoundModule);
     }
 }

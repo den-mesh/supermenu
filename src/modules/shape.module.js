@@ -1,5 +1,5 @@
 import {Module} from '../core/modules';
-import { changeGradient, randomPath } from '../utils';
+import { randomPath } from '../utils';
 
 export class ShapeModule extends Module {
   constructor(type, text){
@@ -10,6 +10,7 @@ export class ShapeModule extends Module {
     const shapeBlock = document.querySelector('.random__shapes');
     const shapeImg = document.querySelector('.shape__img');
     shapeBlock.style.visibility = 'visible';
+    shapeImg.style.opacity = 1;
 
     let svgArr = [
       '../assets/shapes/circle.svg',
@@ -24,6 +25,7 @@ export class ShapeModule extends Module {
     
     setTimeout( () => {
       shapeBlock.style.visibility = 'hidden';
+      shapeImg.style.opacity = 0;
     }, 1000)
   }
 }
