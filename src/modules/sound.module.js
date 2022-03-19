@@ -20,6 +20,7 @@ export class SoundModule extends Module {
       '../assets/saundModule/sondtracks/pirates.mp3',
       '../assets/saundModule/sondtracks/the_broken_people.mp3',
       '../assets/saundModule/sondtracks/venom.mp3',
+      '../assets/saundModule/sondtracks/fast.mp3'
     ];
 
     playSound.src = '';
@@ -56,6 +57,10 @@ export class SoundModule extends Module {
       case 'http://localhost:3000/assets/saundModule/sondtracks/Taxi.mp3':
         img.src = '../assets/saundModule/films_Pict/taxi.jpg';
         audioSubTitle.textContent = 'Saundtrack of Taxi';
+        break;
+      case 'http://localhost:3000/assets/saundModule/sondtracks/fast.mp3':
+        img.src = '../assets/saundModule/films_Pict/fast.jpg';
+        audioSubTitle.textContent = 'Saundtrack of Fast and Furrios';
         break;
     }
 
