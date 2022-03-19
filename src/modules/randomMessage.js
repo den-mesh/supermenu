@@ -1,5 +1,5 @@
 import {Module} from '../core/modules';
-import {randomPath} from '../utils';
+import {randomMessage, randomPath} from '../utils';
 
 export class RandomMessages extends Module {
     constructor(type, text) {
@@ -8,8 +8,11 @@ export class RandomMessages extends Module {
 
     showMessage() {
         const MESSAGE = 'https://type.fit/api/quotes';
-        const dataContainer = document.querySelector('.random__msg');
+        const dataContainer = document.querySelector('.random__msg-text');
         dataContainer.style.visibility = 'visible';
+        dataContainer.textContent = '';
+
+
 
         const toggleLoader = () => {
             const loaderHTML = document.querySelector('#loader');
@@ -42,7 +45,6 @@ export class RandomMessages extends Module {
                 const randomMessage = randomPath(messages);
                 dataContainer.style.backgroundColor = '#9c27b0';
                 dataContainer.append(randomMessage.text);
-
 
             } catch (error) {
                 errorMessage();

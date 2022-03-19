@@ -561,6 +561,11 @@ p {
     transition: all .4s linear;
 }
 
+.random__msg-text {
+    padding: var(--padding);
+    transition: all .4s linear;
+}
+
 .footer__wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
