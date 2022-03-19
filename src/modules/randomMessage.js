@@ -1,5 +1,5 @@
 import {Module} from '../core/modules';
-import {randomMessage, randomPath} from '../utils';
+import { randomPath } from '../utils';
 
 export class RandomMessages extends Module {
     constructor(type, text) {
@@ -11,8 +11,6 @@ export class RandomMessages extends Module {
         const dataContainer = document.querySelector('.random__msg-text');
         dataContainer.style.visibility = 'visible';
         dataContainer.textContent = '';
-
-
 
         const toggleLoader = () => {
             const loaderHTML = document.querySelector('#loader');
@@ -41,9 +39,7 @@ export class RandomMessages extends Module {
                 toggleLoader();
                 const response = await fetch(MESSAGE);
                 const messages = await response.json();
-
                 const randomMessage = randomPath(messages);
-                dataContainer.style.backgroundColor = '#9c27b0';
                 dataContainer.append(randomMessage.text);
 
             } catch (error) {

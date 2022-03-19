@@ -554,15 +554,17 @@ p {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    padding: var(--padding);
     border-radius: 15px;
+    width: 100%;
     max-width: 750px;
     font-size: var(--fz-small);
     transition: all .4s linear;
+    padding: 10px 20px;
+
+    visibility: hidden;
 }
 
 .random__msg-text {
-    padding: var(--padding);
     transition: all .4s linear;
 }
 

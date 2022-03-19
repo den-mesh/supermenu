@@ -73,8 +73,6 @@ export const randomPath = (arr) => {
   let index = Math.round(Math.random() * arr.length - 1);
   return arr[index];
 }
-
-
 // modules ---------------------------------------------------------------------------------
 
 export const clicksAnalitycs = (domEl, module) => {
