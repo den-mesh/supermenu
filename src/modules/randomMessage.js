@@ -54,6 +54,6 @@ export class RandomMessages extends Module {
 
         setTimeout(() => {
             dataContainer.style.visibility = 'hidden';
-        }, 3000)
+        }, 2000)
     }
 }

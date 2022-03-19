@@ -566,12 +566,10 @@ p {
     font-size: var(--fz-small);
     transition: all .4s linear;
     padding: 10px 20px;
-
+    text-align: center;
     visibility: hidden;
-}
-
-.random__msg-text {
     transition: all .4s linear;
+    background-color:#000;
 }
 
 .footer__wrapper {

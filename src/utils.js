@@ -70,12 +70,11 @@ export function changeGradient () {
 }
 
 export const randomPath = (arr) => {
-  let index = Math.round(Math.random() * arr.length - 1);
+  let index = Math.round(Math.random() * (arr.length - 1));
   return arr[index];
 }
 
 export const dropDown = (block) => {
-
   let offsetX;
   let offsetY;
 
@@ -95,8 +94,6 @@ export const dropDown = (block) => {
     block.style.cursor = 'grabbing';
   })
 }
-
-
 // modules ---------------------------------------------------------------------------------
 
 export const clicksAnalitycs = (domEl, module) => {
