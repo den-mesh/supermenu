@@ -73,6 +73,30 @@ export const randomPath = (arr) => {
   let index = Math.round(Math.random() * arr.length - 1);
   return arr[index];
 }
+
+export const dropDown = (block) => {
+
+  let offsetX;
+  let offsetY;
+
+  block.addEventListener('dragstart', (e) => {
+    offsetX = e.offsetX;
+    offsetY = e.offsetY;
+  })
+
+  block.addEventListener('dragend', (e) => {
+    block.style.top = (e.screenY - offsetY - 100) + 'px';
+    block.style.left = (e.screenX - offsetX) + 'px';
+    block.style.transform = 'none';
+    block.style.cursor = 'grab';
+  })
+
+  block.addEventListener('mousedown', () => {
+    block.style.cursor = 'grabbing';
+  })
+}
+
+
 // modules ---------------------------------------------------------------------------------
 
 export const clicksAnalitycs = (domEl, module) => {

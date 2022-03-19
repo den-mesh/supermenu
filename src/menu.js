@@ -38,7 +38,7 @@ export class ContextMenu extends Menu {
             animateDownHideEl(btnStartUsing)
             animateVisibleEl(btnSeeCode)
         })
-
+        
         document.addEventListener('contextmenu', (event) => {
             event.preventDefault()
             let {layerX} = event
