@@ -562,6 +562,7 @@ p {
 }
 
 .random__msg-text {
+    display: block;
     padding: var(--padding);
     transition: all .4s linear;
 }
