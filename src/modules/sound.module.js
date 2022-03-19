@@ -26,7 +26,7 @@ export class SoundModule extends Module {
     randomSaundBlock.style.visibility = 'visible';
     playSound.src = randomPath(audioArr);
     playSound.play();
-    playSound.control = true;
+    // playSound.controls = true;
     
     switch (playSound.src) {
       case 'http://localhost:3000/assets/saundModule/sondtracks/pirates.mp3':
