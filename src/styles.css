@@ -488,6 +488,7 @@ p {
     top: 100px;
     left: 50%;
     transform: translateX(-50%);
+    cursor: grab;
 
     border: 5px solid rgb(165, 209, 165);
     background-color:rgb(37, 26, 26);
@@ -523,7 +524,7 @@ p {
     display: flex;
     flex-direction: column;
     text-align: center;
-    padding: 10px;
+    padding: 16px 10px;
     background-color:rgb(190, 190, 190);
     border-radius:15px;
     width: 440px;
