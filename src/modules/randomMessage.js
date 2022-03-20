@@ -48,12 +48,11 @@ export class RandomMessages extends Module {
                 toggleLoader();
             }
 
+            setTimeout(() => {
+                dataContainer.style.visibility = 'hidden';
+            }, 2000)
         }
 
         renderMessage();
-
-        setTimeout(() => {
-            dataContainer.style.visibility = 'hidden';
-        }, 2000)
     }
 }
