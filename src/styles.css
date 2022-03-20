@@ -519,6 +519,10 @@ p {
     margin: auto;
 }
 
+.random__audio {
+    width: 100%;
+}
+
 .random__sound--text {
     color: #000;
     font-size: 20px;

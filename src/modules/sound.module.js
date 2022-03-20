@@ -11,7 +11,7 @@ export class SoundModule extends Module {
     const img = document.querySelector('.random__sound--img');
     const close = document.querySelector('.sound__close');
     const playSound = document.querySelector('.random__audio');
-    const audioSubTitle = document.querySelector('.random__sound--text');
+    // const audioSubTitle = document.querySelector('.random__sound--text');
     const audioArr = [
       '../assets/saundModule/sondtracks/Shoop.mp3',
       '../assets/saundModule/sondtracks/Taxi.mp3',
@@ -20,47 +20,55 @@ export class SoundModule extends Module {
       '../assets/saundModule/sondtracks/pirates.mp3',
       '../assets/saundModule/sondtracks/the_broken_people.mp3',
       '../assets/saundModule/sondtracks/venom.mp3',
-      '../assets/saundModule/sondtracks/fast.mp3'
+      '../assets/saundModule/sondtracks/fast.mp3',
+      '../assets/saundModule/sondtracks/alien.mp3',
+      '../assets/saundModule/sondtracks/compton.mp3',
+      '../assets/saundModule/sondtracks/negrozi.mp3',
+      '../assets/saundModule/sondtracks/stepup.mp3'
     ];
 
     playSound.src = '';
     randomSaundBlock.style.visibility = 'visible';
     playSound.src = randomPath(audioArr);
     playSound.play();
-    // playSound.controls = true;
+    playSound.controls = true;
     
     switch (playSound.src) {
       case 'http://localhost:3000/assets/saundModule/sondtracks/pirates.mp3':
         img.src = '../assets/saundModule/films_Pict/pirates.jpg';
-        audioSubTitle.textContent = 'Pirates of Caribian';
         break;
       case 'http://localhost:3000/assets/saundModule/sondtracks/Shoop.mp3':
         img.src = '../assets/saundModule/films_Pict/Deadpool.jpg';
-        audioSubTitle.textContent = 'Saundtrack of DeadPool';
         break;
       case 'http://localhost:3000/assets/saundModule/sondtracks/men_in_black.mp3':
         img.src = '../assets/saundModule/films_Pict/meninblack.jpg';
-        audioSubTitle.textContent = 'Saundtrack of Men In Black';
         break;
       case 'http://localhost:3000/assets/saundModule/sondtracks/the_broken_people.mp3':
         img.src = '../assets/saundModule/films_Pict/Bright.jpg';
-        audioSubTitle.textContent = 'Saundtrack of Brigth';
         break;
       case 'http://localhost:3000/assets/saundModule/sondtracks/ironMan.mp3':
         img.src = '../assets/saundModule/films_Pict/ironMan.jpg';
-        audioSubTitle.textContent = 'Saundtrack of Iron Man';
         break;
       case 'http://localhost:3000/assets/saundModule/sondtracks/venom.mp3':
         img.src = '../assets/saundModule/films_Pict/venom.jpg';
-        audioSubTitle.textContent = 'Saundtrack of Venom';
         break;
       case 'http://localhost:3000/assets/saundModule/sondtracks/Taxi.mp3':
         img.src = '../assets/saundModule/films_Pict/taxi.jpg';
-        audioSubTitle.textContent = 'Saundtrack of Taxi';
         break;
       case 'http://localhost:3000/assets/saundModule/sondtracks/fast.mp3':
         img.src = '../assets/saundModule/films_Pict/fast.jpg';
-        audioSubTitle.textContent = 'Saundtrack of Fast and Furrios';
+        break;
+      case 'http://localhost:3000/assets/saundModule/sondtracks/alien.mp3':
+        img.src = '../assets/saundModule/films_Pict/alien.jpg';
+        break;
+      case 'http://localhost:3000/assets/saundModule/sondtracks/compton.mp3':
+        img.src = '../assets/saundModule/films_Pict/compton.jpg';
+        break;
+      case 'http://localhost:3000/assets/saundModule/sondtracks/negrozi.mp3':
+        img.src = '../assets/saundModule/films_Pict/neGrozi.jpg';
+        break;
+      case 'http://localhost:3000/assets/saundModule/sondtracks/stepup.mp3':
+        img.src = '../assets/saundModule/films_Pict/step.jpg';
         break;
     }
 
