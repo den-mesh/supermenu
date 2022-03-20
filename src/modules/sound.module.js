@@ -22,7 +22,7 @@ export class SoundModule extends Module {
       '../assets/saundModule/sondtracks/venom.mp3',
       '../assets/saundModule/sondtracks/fast.mp3',
       '../assets/saundModule/sondtracks/alien.mp3',
-      '../assets/saundModule/sondtracks/compton.mp3',
+      '../assets/saundModule/sondtracks/comton.mp3',
       '../assets/saundModule/sondtracks/negrozi.mp3',
       '../assets/saundModule/sondtracks/stepup.mp3'
     ];
@@ -61,7 +61,7 @@ export class SoundModule extends Module {
       case 'http://localhost:3000/assets/saundModule/sondtracks/alien.mp3':
         img.src = '../assets/saundModule/films_Pict/alien.jpg';
         break;
-      case 'http://localhost:3000/assets/saundModule/sondtracks/compton.mp3':
+      case 'http://localhost:3000/assets/saundModule/sondtracks/comton.mp3':
         img.src = '../assets/saundModule/films_Pict/compton.jpg';
         break;
       case 'http://localhost:3000/assets/saundModule/sondtracks/negrozi.mp3':
